@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("loaded");
   let socket = io();
   const form = document.querySelector("#form");
   const message = document.querySelector("#message");
@@ -7,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   form.addEventListener("submit", (e) => {
     console.log("e fired", e);
-    //   console.log('messages.')
     e.preventDefault();
     socket.emit("chat message", message.value);
     message.value = "";
